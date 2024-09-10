@@ -92,7 +92,7 @@
 //     console.log("You can go");
 // }
 // else{
-//     console.log("color corect ga enter chey ra hooka")
+//     console.log("Enter the correct color")
 // }
 
 
@@ -210,5 +210,37 @@
 
 
 // 5.Simple calculator
+
+// var a=+prompt("Enter a 1st number:");
+// var b=+prompt("Enter a 2nd number:");
+// var operation=prompt("Enter the operation:")
+
+// switch(operation){
+//     case "+":
+//     console.log(a+b);
+//     break;
+
+//     case "-":
+//     console.log(a-b);
+//     break;
+
+//     case "*":
+//     console.log(a*b);
+//     break;
+
+//     case "%":
+//     console.log(a/b);
+//     break;
+
+//     case "%":
+//     console.log(a%b);
+//     break;
+
+//     default:
+//     console.log("Enter the correct operation");
+
+
+// }
+
 
 

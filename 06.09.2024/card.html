@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var header=document.createElement("div");
+       header.classList.add("header1");
+       console.log(header);
+       header.style.height="20vh";
+       header.style.display="flex";
+       header.style.justifyContent="center"
+       header.style.gap="15%";
+
+       
+    //    header.style.backgroundColor="blue";
+       header.style.border="2px solid red";
+       document.body.appendChild(header);
+
+       var headingmain=document.createElement("h1");
+    headingmain.innerText="Karthik Jinkala";
+    headingmain.innerHTML="Br Architects";
+    // headingmain.style.color="blue";
+    headingmain.style.border="2px solid red";
+    headingmain.style.height="6vh";
+    headingmain.style.fontSize="5vh";
+    // headingmain.style.backgroundColor="silver";
+    console.log(headingmain);
+    document.body.appendChild(headingmain);
+
+     header.appendChild(headingmain);
+
+
+     var techskills=document.createElement("ul");
+     techskills.style.display="flex";
+     techskills.style.justifyContent="center";
+     techskills.style.gap="10%.";
+
+
+    var techskillss=document.createElement("li");
+    techskillss.innerHTML="Home";
+    techskillss.style.fontSize="3vh";
+
+
+
+
+    var techskillss1=document.createElement("li");
+    techskillss1.innerText="services";
+    techskillss1.style.fontSize="3vh";
+    techskillss1.style.textDecoration="none";
+
+
+
+    var techskillss2=document.createElement("li");
+    techskillss2.innerText="Contact";
+    techskillss2.style.fontSize="3vh";
+
+
+    techskills.appendChild(techskillss);
+    techskills.appendChild(techskillss1);
+    techskills.appendChild(techskillss2);
+    console.log(techskills);
+    document.body.appendChild(techskills);
+
+    header.appendChild(techskills);
+    header.appendChild(techskillss1);
+    header.appendChild(techskillss2);
+
+
+    
+       
+
+
+       
+       
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

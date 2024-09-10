@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    var box=document.createElement("div");
+    box.style.height="40vh";
+    box.style.width="50vh";
+    box.style.marginLeft="20%";
+    box.style.backgroundColor="pink"
+    box.style.border="2px solid red"
+    console.log(box);
+    document.body.appendChild(box);
+
+var colors=["red","yellow","orange","blue","silver","gold"];
+var currentindex=0;
+    function changecolor(){
+     
+        box.style.backgroundColor=colors[currentindex];
+
+        currentindex=(currentindex+1)%colors.length;
+
+     
+    }
+</script>
+
+       
+   
+</body>
+</html>

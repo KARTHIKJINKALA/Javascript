@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // practice
+        // debugger;
+//         ahi()
+// function ahi(){
+//     console.log(5+10)
+// }
+// ahi()
+
+// function parameters and orguments
+
+// function bobby(a,b){
+//          console.log(a+b);
+//          console.log(a-b);
+//          console.log(a*b);
+
+// }
+// bobby(20,30);
+
+1.// by using the prompt and taking values from the user
+
+// function name(a,b){
+//     console.log(a+b);
+ 
+//     console.log(a-b);
+// }
+// a=+prompt("enter a number");
+
+// b=+prompt("enter a number");
+// name(a,b)
+
+
+
+2.// even or odd program
+
+// function num(a){
+  
+//   if(a%2==0){
+//       console.log("it is even number");
+//   }
+//   else{
+//       console.log("it is odd number");
+//   }
+// }
+// a=+prompt("enter a number");
+// num(a)
+
+
+// 3.print the number from the 1 to 20 by using the functions
+
+// function number(a){
+
+// for (i=0; i<=a; i++){
+    
+    
+    
+// if (i%2==0){
+//     console.log(i+"Even number");
+// }
+ 
+
+// }
+
+// }
+
+// number(25);
+
+// pure function- static function
+// recusion- when a function ccalls itself again and again
+
+
+
+/////////////////////////
+// annonymus function
+// var a=function (){
+//     console.log("hello world");
+//     return "new world"
+// }
+
+// // a()
+// console.log(a())
+
+
+ //////////////////////
+// Arrow function
+// var a=   ()=>{
+//     console.log("hello world");
+//     return "new world"
+// }
+
+// // a()
+// console.log(a())
+// we can also write the arrow function for single statement
+// var a=()=> console.log("hello world");
+
+// a()
+
+
+////////////
+// Tasks
+////////////////////////////
+// Task 1: Greeting Function
+// Scenario: Create a function that takes a name as an argument and returns a greeting message.
+// Task:
+// Define a function greet that takes one parameter name.
+// The function should print a greeting message like “Hello, [name]!”.
+// Call the function with different names and print the results.
+
+// code
+// function greet(a="Welcome"){
+    
+//     console.log("Hello!  " +a);
+   
+    
+// }
+// greet()
+// a=prompt("Enter your name");
+// greet(a)
+
+
+//////////////////////////////
+// Task 2: Sum Function
+// Scenario: Create a function that takes two numbers as arguments and returns their sum.
+// Task:
+// Define a function sum that takes two parameters a and b.
+// The function should return the sum of a and b.
+// Call the function with different numbers and print the results.
+
+
+// function num(a,b){
+//     console.log(a+b)
+// }
+
+// num(20,24);
+// num(13,5);
+// num(10,-8);
+// num(40,240);
+// num(650,500);
+
+
+///////////////////////////////
+// Task 3: Square Function
+// Scenario: Create a function that takes a number as an argument and returns its square.
+// Task:
+// Define a function square that takes one parameter num.
+// The function should return the square of num.
+// Call the function with different numbers and print the results.
+
+// code 
+// function numb(c){
+//     console.log("square of "+c+"="+c*c)
+// }
+// c=+prompt("Enter a number")
+// numb(c)
+
+
+////////////////////////////////
+// Task 4: Average Function
+// Scenario: Create a function that takes an array of numbers as an argument and returns the average.
+// Task:
+// hint:[2,5,2] =9/3=3
+// Define a function average that takes one parameter arr.
+// The function should return the average of the numbers in arr.
+// Call the function with different arrays and print the results.
+// function avr(){
+// sum=0;
+// var arry=[1,20,3];
+// for (i=0; i<arry.length; i++){
+//     // console.log(arry[i])
+//   sum+=arry[i];
+//   var avg=sum/arry.length
+  
+// }
+// // console.log(sum)
+// console.log(avg)
+// }
+// avr()
+
+
+
+
+////////////////////////////////
+// Task 5:  Vowels Function
+// Scenario: Create a function that takes a string as an argument and returns weather the strings contains vowels or not .
+// Task:
+// Define a function that takes one parameter str.
+// The function should return whether string contains vowels or not.
+// use loops and if conditions
+// Call the function with different strings and print the results.
+// hello --a,e ,i ,o,u---it contains vowels
+// hll---it doesnt contains vowels
+
+
+// var nam = "karthik jinkala";
+// var vow = "aeiou";
+// var vowelFound = false;
+
+// for (var i = 0; i < nam.length; i++) {
+//     if (vow.includes(nam[i])) {
+//         console.log("Vowel found");
+//         vowelFound = true;
+//         break;
+//     }
+// }
+
+// if (!vowelFound) {
+//     console.log("Vowel not found");
+// }
+
+
+////////////////////////////////
+// Task 6: Temperature Converter
+// Scenario: Create a function that converts temperatures between Celsius and Fahrenheit.
+// Task:
+// Define a function convertTemperature that takes two parameters: temp (the temperature) and scale (the scale to convert to, either “C” or “F”).
+// The function should return the converted temperature.
+// Test the function with different temperatures and scales and print the results.
+// Hints:-
+// formula for celscious (temp - 32) * 5/9
+// formula for fahrehnheit (temp * 9/5) + 32
+
+// code 
+// function temp(a,b){
+    
+    
+//     if(a=="c"){
+//         b=(b-32) * 5/9;
+//         console.log("celscious  "+  b)
+//     }
+//     else if(a=="f"){
+//          b=(b*9/5) + 32;
+//         console.log("fahrehnheit "+  b)
+//     }
+//     else{
+//         console.log("Enter the correct Scale")
+//     }
+// }
+    
+
+// a=prompt("Enter the Scale:");
+// b=prompt("Enter the Temperature:");
+// temp(a,b);
+
+
+
+
+
+    </script>
+</body>
+</html>

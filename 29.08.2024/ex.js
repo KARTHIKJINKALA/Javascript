@@ -1,4 +1,4 @@
-// Consider 2 variables and perform arithmetic and assignment operators. 
+// Considering 2 variables and perform arithmetic and assignment operators. 
 // ARITHMETIC OPERATORS 
 // (1) ADDITION ;
 var a=50;
