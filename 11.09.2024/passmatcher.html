@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="inp1" placeholder="enter the username">
+        <input type="text" id="inp2" placeholder="enter the password">
+
+
+
+        <input type="submit" value="submit">
+    </form>
+    <script>
+                var match=document.querySelectorAll("form")[0];
+
+match.addEventListener("submit",(event)=>{
+    event.preventDefault();
+    var inp1=document.querySelector("input");
+    var inp2=document.querySelectorAll("input")[1];
+
+    console.log(inp1,inp2);
+
+    if(inp1.value==inp2.value){
+        alert("password is matched")
+    }
+    else{
+        alert("password is not matched")
+
+    }
+    console.log(match[0].value)
+})
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .added{
+        color: rgb(0, 208, 255);
+        background-color: blueviolet;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3vh;
+    }
+    </style>
+</head>
+<body>
+<div>
+    <h1>karthik jinkala</h1>
+</div>
+
+<button id="a1">clickon</button>
+<button id="a2">clicknew</button>
+<button id="a3">clickme bro</button>
+
+
+    <script>
+        var btn=document.getElementById("a1");
+        btn.addEventListener("click",call);
+        console.log(btn);
+        var btn1=document.getElementById("a2");
+        btn1.addEventListener("mouseover",call1)
+        console.log(btn1);
+        var btn1=document.getElementById("a2");
+        btn1.addEventListener("mouseout",call2)
+        console.log(btn1);
+
+        function call(){
+            var change=document.querySelector("div");
+            change.classList.toggle("added")
+            console.log(change);
+           
+
+        }
+
+        function call1(){
+            var change=document.querySelector("div");
+            change.classList.toggle("added")
+            console.log(change);
+           
+
+        }
+        function call2(){
+            var change=document.querySelector("div");
+            change.classList.toggle("added")
+            console.log(change);
+           
+
+        }
+      
+    // var a=document.getElementsByClassName("el1")[0];
+    // var b=a.getAttribute("title");
+    // console.log(b);
+    // if(b=="karthik jinkala"){
+    //     a.style.color="orange"
+    // }
+    // else{
+    //     a.style.color="pink"
+    // }
+
+ 
+        // function click1(a){
+        //     var element1=document.getElementsByClassName(a)[0];
+        //     element1.setAttribute("class","added")
+        //     // console.log(element1);
+            
+
+        // }
+        // click1("el5");
+
+
+    //  var a=document.createElement("form");
+
+    //  var b=document.createElement("input");
+    //  b.style.height="15vh";
+    //  b.style.width="70vw";
+    //  b.style.border="2px solid red";
+    // //  b.name="text";
+    // //  b.setAttribute("placeholder"," enter the username");
+    //  b.setAttribute("class","added");
+
+
+
+    //  a.appendChild(b);
+    //  console.log(a);
+    //  document.body.appendChild(a);
+
+
+    // creating an image by using the set attribute;
+    // var image=document.createElement("img");
+    // // image.setAttribute("src",'bimage.jpg');
+    // image.src="bimage.jpg";
+    // image.style.height="100vh";
+
+  
+    // console.log(image);
+    // document.body.appendChild(image);
+
+
+    // var text=document.createElement("div");
+    // text.innerText="hello karthik jinkala";
+    // text.setAttribute("class","added")
+
+    // console.log(text);
+    // document.body.appendChild(text);
+
+
+    
+    </script>
+</body>
+</html>

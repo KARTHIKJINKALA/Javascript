@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <input type="text" id="inp1" placeholder="enter a number">
+    <input type="text" id="inp2" placeholder="enter a number">
+
+    <div class="output">=value</div>
+    <button id="add">add</button>
+    <button id="sub">subtract</button>
+</form>
+<script>
+          var btn=document.getElementById("add");
+        // console.log(btn)
+        btn.addEventListener("click",(event)=>{
+            event.preventDefault();
+            var input1=document.getElementById("inp1").value;
+            var input2=document.getElementById("inp2").value;
+            value=Number(input1)+Number(input2);
+            var output=document.getElementsByClassName("output")[0];
+            output.innerHTML="="+value;
+            console.log(value);
+
+              });
+
+         var btn1=document.getElementById("sub");
+        // console.log(btn)
+        btn1.addEventListener("click",(event)=>{
+            event.preventDefault();
+            var input1=document.getElementById("inp1").value;
+            var input2=document.getElementById("inp2").value;
+            value1=Number(input1)-Number(input2);
+            var output=document.getElementsByClassName("output")[0];
+            output.innerHTML="="+value1;
+            console.log(value1);
+
+             })
+    
+</script>
+    
+</body>
+</html>
