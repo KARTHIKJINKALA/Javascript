@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading{
+            color: blueviolet; 
+            height: 18vh;
+            border: 2px solid blue; 
+            display: flex;
+            justify-content: center; 
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 5.5px );
+            -webkit-backdrop-filter: blur( 5.5px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+        .heading>h1{
+            font-size: 8vh;
+        }
+        .input1,.input2{
+            margin-top: 3%;
+          height: 8vh;
+         /* border: 2px solid blue;  */
+         display: flex;
+         justify-content: center;
+         
+        }
+        .input1>input,.input2>input{
+            width: 40vw;
+            height: 5vh;
+            /* border: 2px solid blueviolet; */
+            font-size: 3vh;
+            color: blue;
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 5.5px );
+            -webkit-backdrop-filter: blur( 5.5px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            /* border-radius: %; */
+        }
+        .a1{
+            margin-left: 32%;
+            margin-top: 5%;
+            height: 18vh;
+            width: 40vw;
+            border: 2px solid blue;
+            text-align: center;
+            color: chocolate;
+        }
+        .submit>button{
+            margin-left: 45%;
+            color: rgb(0, 4, 255);
+
+        }
+        .progress-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .progress-bar {
+            width: 50vw;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Water Reminder App</h1>
+    </div>
+
+    <div class="input1">
+        <input type="text" name="" id="input1" placeholder="Enter water intake in liters">
+    </div>
+    <div class="input2">
+        <input type="text" name="" id="input2" placeholder="Enter the time interval in hours">
+    </div>
+    <div class="submit">
+        <button>Submit</button>
+    </div>
+    <div class="progress-container">
+        <progress class="progress-bar" value="0" max="100"></progress>
+    </div>
+
+    <script>
+var btn1 = document.getElementsByClassName("submit")[0]
+btn1.addEventListener("click", () => {
+
+    var waterintake = document.getElementById("input1").value;
+    var duration = document.getElementById("input2").value;
+
+    var a1=Number(waterintake); 
+    var a2=Number(duration);    
+
+    if (a1>0 && a2>0) {
+
+        var set=document.createElement("div");
+        set.setAttribute("class", "a1");
+        document.body.appendChild(set);
+
+        var h1=document.createElement("h3");
+        h1.innerText =`Goal is set for: ${a1} liters`;
+        set.appendChild(h1);
+
+        var h2=document.createElement("h3");
+        h2.innerText = `Time duration is: ${a2} hours`;
+        set.appendChild(h2);
+    } else {
+        alert("Enter the correct number");
+        return;
+    }
+
+
+    var waterinml=(a1*1000)/a2;
+    
+
+    var intervalinms=(a2*3600)/a2;
+
+    let totalwaterdrunk=0;
+    
+    var progressBar=document.querySelector(".progress-bar");
+    progressBar.max=a1*1000;
+
+    var reminder=setInterval(() => {
+        if (totalwaterdrunk<a1*1000) {
+            var parent=document.createElement("div");
+            parent.setAttribute("class", "a1");
+            document.body.appendChild(parent);
+
+            var ques=document.createElement("p");
+            ques.innerText=`Have you taken ${waterinml.toFixed(2)} ml of water?`;
+            parent.appendChild(ques);
+
+            var yes=document.createElement("button");
+            yes.innerHTML = "Yes";
+            parent.appendChild(yes);
+            
+            yes.addEventListener("click", () => {
+                totalwaterdrunk+=waterinml;
+                progressBar.value=totalwaterdrunk;
+                parent.remove();
+
+                if (totalwaterdrunk>=progressBar.max) {
+                    clearInterval(reminder);
+                    alert("You've reached your water goal for today!");
+                }
+            });
+
+
+            var no=document.createElement("button");
+            no.innerHTML = "No";
+            parent.appendChild(no);
+            
+            no.addEventListener("click", () => {
+                parent.remove(); 
+            });
+
+        } else {
+            clearInterval(reminder);
+            alert("You've reached your water goal for today!");
+        }
+
+    }, intervalinms);  
+
+
+    document.getElementById("input1").value = "";
+    document.getElementById("input2").value = "";
+});
+
+        
+    </script>
+</body>
+</html>

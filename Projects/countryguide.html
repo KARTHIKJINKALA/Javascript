@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        background-color: cadetblue;
+   
+    }
+    .inp1{
+        height: 5vh;
+        width: 20vw;
+    }
+    .btn1{
+        display: block;
+        background-color: chartreuse;
+
+    }
+</style>
+</head>
+<body>
+   
+    <script>
+        var inp1=document.createElement("input")
+        document.body.appendChild(inp1)
+        inp1.setAttribute("class","inp1")
+        /////////////
+        var submit=document.createElement("button")
+        submit.innerHTML="SUBMIT"
+        document.body.appendChild(submit)
+        submit.setAttribute("class","btn1")
+        //////////////////
+        submit.addEventListener("click",()=>{
+            var countryName=inp1.value
+
+    async function country(){
+    var res=await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
+      
+      var data=await res.json()
+      console.log(data)
+        }
+        country()
+
+        var a1=data.map(function (val){
+            return a1
+        })
+        console.log(a1)
+    })
+
+    
+    
+
+
+  
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

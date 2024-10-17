@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading{
+            color: blueviolet; 
+            height: 18vh;
+            border: 2px solid blue; 
+            display: flex;
+            justify-content: center; 
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 5.5px );
+            -webkit-backdrop-filter: blur( 5.5px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+        .heading>h1{
+            font-size: 8vh;
+        }
+        .input1,.input2{
+            margin-top: 3%;
+          height: 8vh;
+         /* border: 2px solid blue;  */
+         display: flex;
+         justify-content: center;
+         
+        }
+        .input1>input,.input2>input{
+            width: 40vw;
+            height: 5vh;
+            /* border: 2px solid blueviolet; */
+            font-size: 3vh;
+            color: blue;
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 5.5px );
+            -webkit-backdrop-filter: blur( 5.5px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            /* border-radius: %; */
+        }
+        .a1{
+            height: 10vh;
+            width: 20vw;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Water Reminder App</h1>
+    </div>
+
+    <div class="input1">
+        <input type="text" name="" id="input1" placeholder="Enter water intake in liters">
+    </div>
+    <div class="input2">
+        <input type="text" name="" id="input2" placeholder="Enter the time interval in hours">
+    </div>
+    <div class="submit">
+        <button>Submit</button>
+    </div>
+
+
+    <script>
+
+        var a=document.getElementsByClassName("submit")[0]
+        console.log(a)
+        a.addEventListener("click",()=>{
+            var waterIntake=document.getElementById("input1").value
+            var intervalHours=document.getElementById("input2").value
+            var a1=Number(waterIntake)
+            var a2=Number(intervalHours)
+            res=a1/a2
+
+            if(waterIntake>0 && intervalHours>0){
+                alert("remider is set")
+            }
+            else{
+                alert("Enter the valid numbers")
+            }
+            var info=document.createElement("p1")
+            info.innerHTML=`<h3>Water intake goal is:${a1}liters</h3>`
+            document.body.appendChild(info)
+
+            var info1=document.createElement("p1")
+            info1.innerHTML=`<h3>Water intake duration is:${a2}hours</h3>`
+            document.body.appendChild(info1)
+    res1=res*60*60*1000
+    console.log(res1)
+    count=0
+   
+ var inter=setInterval(() => {
+
+    count++
+    
+ //   alert("drink water")
+ var parent=document.createElement("div")
+ parent.setAttribute("class","a1")
+ document.body.appendChild(parent)
+ //////////////////
+ var ques=document.createElement("p")
+ ques.innerText=`Have you take ${res} liters of water?`
+ parent.appendChild(ques)
+ /////////////////////
+ var yes=document.createElement("button")
+ yes.innerHTML="Yes"
+ parent.appendChild(yes)
+ yes.addEventListener("click",()=>{
+     
+ })
+
+
+ ///////////////////////
+ var no=document.createElement("button")
+ no.innerHTML="No"
+ parent.appendChild(no)
+ ///////////////////
+//  var res1=res*60*60*1000
+
+console.log(count)
+if(count==5){
+    clearInterval(inter)
+}
+ 
+     },res1);
+
+        })
+
+    </script>
+</body>
+</html>

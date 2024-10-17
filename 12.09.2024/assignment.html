@@ -10,8 +10,8 @@
     <script>
 //         Basic level
 // Task 1: take prompt and Convert to Uppercase
-var a=prompt("enter a string");
-console.log(a.toUpperCase());
+// var a=prompt("enter a string");
+// console.log(a.toUpperCase());
 // Task 2: take prompt and Convert to Lowercase
 // var a=prompt("enter a string");
 // console.log(a.toLowerCase());
@@ -22,10 +22,77 @@ console.log(a.toUpperCase());
 // Task 4: take prompt and Count the number of vowels in a string--
 // hints use match method
 // var a=prompt("enter the name");
-
-
+// console.log(a);
 // var b=a.match(/[aeiou]/gi);
 // console.log(b.length)
+// Advanced problems
+// Task 1: Username Validation
+// Scenario: Validate a username based on specific criteria. Task:
+// Prompt the user to enter a username.
+// Check if the username contains characters in between 5 to 15 long.
+// Display a message indicating whether the username is valid or not.
+
+// var user=prompt("Enter the username");
+//   if(user.length>=5 && user.length<=15){
+//     console.log(user);
+//     console.log("user name is valid")
+//   }
+//   else{
+//     console.log(user);
+//     console.log("user name is not vaild")
+//   }
+////////////////////////
+// Task 2: Email Formatter
+// Scenario: Format an email address. Task:
+// Prompt the user to enter their first and last name.
+// Convert the names to lowercase and concatenate them with a dot in between.
+// concat “@gmail.com” to the result and display the formatted email address.
+// inp: jenny and joy
+// out: jenny.joy@gmail.com
+
+// var fname=prompt("Enter the first");
+// var lname=prompt("Enter the last name");
+// var change=fname.toLowerCase()+"."+lname.toLowerCase();
+// var email=change.concat("@gmail.com");
+// console.log(email);
+//////////////////
+
+// Task 3: Word Counter
+// Scenario: Count the number of words in a sentence. Task:
+// Prompt the user to enter a sentence.
+// Split the sentence into words and count them.
+// Display the word count.
+// Hint: use split and length method
+
+// var str=prompt("Enter a string");
+// var count=str.split(" ").length;
+// console.log(count);
+//////////////////////////
+
+// Task 4: Palindrome Checker
+// Scenario: Check if a given string is a palindrome. Task:
+// Prompt the user to enter a string.
+// Check if the string reads the same forwards and backwards.
+// Display a message indicating whether the string is a palindrome
+// Hints : use split,join, reverse method in arrays
+
+// inp:john
+// out: not a palindrome
+
+// inp:dad
+// out:it is a palindrome
+
+// var str=prompt("Enter the string");
+// var palin=str.split("").reverse().join("");
+// if(str==palin){
+//     console.log(str);
+//     console.log("it is a palindrome")
+// }
+// else{
+//     console.log(str);
+//     console.log("it is not a palindrome")
+// }
+
 
 
 

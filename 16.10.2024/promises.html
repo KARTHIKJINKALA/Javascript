@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //  Callback hell
+// Callback hell, also known as "Pyramid of Doom," is a term used in JavaScript programming to describe a situation
+//  where multiple nested callbacks make the code difficult to read, understand, and maintain. This usually happens when dealing with
+//  asynchronous operations, such as making API requests or reading files.
+// example for callback hell
+//         function a1(b1){
+//           setTimeout(() => {
+              
+//               console.log("hello karthik")
+//               b1()
+//           }, 3000);
+//         }
+//         function a2(b2){
+//             setTimeout(() => {
+//                 console.log("hello ram")
+//                 b2()
+// }, 1000);
+//         }
+//         function a3(b3){
+//             setTimeout(() => {
+    
+//                 console.log("hello john")
+//                 b3()
+// }, 1000);
+//         }
+//         function a4(){
+//             setTimeout(() => {
+    
+//                 console.log("hello david")
+// }, 5000);
+//         }
+
+//        a1(()=>{
+//         a2(()=>{
+//             a3(()=>{
+//                 a4()
+//             })
+//         })
+//        })
+
+
+    //    to avoid this callabck hell we use promises:
+    // 1.Promises
+// 2.Async/await
+
+// promises
+// Promises in JavaScript provide a cleaner and more structured way 
+// to handle asynchronous operations compared to traditional callbacks.
+// It has three states: pending, fulfilled, or rejected.
+
+
+
+
+
+//creating a promise
+var newpromise= new Promise(function(resolve,reject){
+    var a=-200
+    if(a>=1){
+        resolve (a+" is a positive number")
+    }
+    else{
+        reject(a+" is a negative number")
+    }
+})
+// consuming the promise- for to print the response
+newpromise.then((val)=>{
+    console.log(val)
+})
+.catch((err)=>{
+      console.log(err)
+      })
+/////////////
+// promise chaining
+var a1=new Promise(function(resolve,reject){
+    
+})
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:  #e6f2ff;
+        }
+        .add{
+            color: blueviolet;
+            margin-left: 45%;
+            font-size: 5vh;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    
+    <script>
+        var heading=document.createElement("h1");
+        heading.innerText="To Do-List";
+        heading.setAttribute("class","add")
+        console.log(heading);
+        document.body.appendChild(heading);
+
+        var flex=document.createElement("div");
+        flex.style.display="flex";
+        flex.style.justifyContent="center";
+        flex.style.gap="1%";
+        flex.style.height="5vh";
+        // flex.style.border="2px solid red"
+       
+
+        var input=document.createElement("input");
+        input.setAttribute("placeholder","enter cheyandi bro");
+        input.style.height="4vh";
+        input.style.width="20vw";
+        
+
+        var click=document.createElement("button");
+        click.innerText="Generate";
+        click.style.height="5vh";
+        click.style.width="10vw";
+
+
+
+       
+
+        
+
+        flex.appendChild(input);
+        flex.appendChild(click);
+
+
+        console.log(flex);
+
+        document.body.appendChild(flex);
+
+
+        click.addEventListener("click",()=>{
+            if(input.value==""){
+            alert(" input value kalinga vundhi bro")
+            }
+            else{
+        
+
+            var a=document.getElementsByClassName("new")[0];
+            var b=document.createElement("p");
+            b.setAttribute("class","new");
+            console.log(a);
+            b.style.height="40vh";
+            b.style.color="blue"
+            b.style.marginLeft= "40%";
+            b.style.fontSize="3vh";
+            b.style.width="20vw";
+            b.style.border="2px solid red";
+            b.style.borderRadius="2%"
+            b.style.textAlign="center";
+            b.style.overflowY="scroll"
+
+            b.innerText=input.value;
+            var click1=document.createElement("button");
+        click1.innerText="Remove";
+        click1.style.height="5vh";
+        click1.style.width="10vw";
+        click1.style.display='block'
+        click1.style.marginTop="30%";
+        click1.style.marginLeft="25%";
+
+        var click2=document.createElement("button");
+        click2.innerText="mark";
+        click2.style.height="5vh";
+        click2.style.width="10vw";
+        click2.style.display='block';
+        click2.style.marginTop="30%";
+        click2.style.marginLeft="25%";
+        
+        
+        
+        b.appendChild(click1) ;
+        click1.addEventListener("click",()=>{
+            document.body.removeChild(b);
+        })
+        
+    
+    }
+
+            document.body.appendChild(b);
+            input.value="";
+
+        })
+    
+    
+       
+
+
+
+    </script>
+    <!-- <div class="new"></div> -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" id="date">
+    <button>Calculate the age</button>
+
+    <script>
+
+
+
+        var btn=document.querySelector("button");
+
+        btn.addEventListener("click",()=>{
+            var userdate=document.getElementById("date").value;
+            // console.log(userdate)
+
+            var date=new Date(userdate);
+            var presentdate=new Date();
+
+            var age=presentdate.getFullYear();
+            var bage=date.getFullYear();
+            
+            var calcage=age-bage;
+            console.log("Years Difference"+calcage)
+
+        })
+
+
+
+
+
+
+        
+
+    </script>
+    
+</body>
+</html>
