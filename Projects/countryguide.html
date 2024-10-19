@@ -3,34 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Info</title>
-    <style>
-        body {
-            background-color: cadetblue;
+    <title>Document</title>
+</head>
+<style>
+            body {
+            background-image:linear-gradient(to left,rgb(0, 255, 187), rgb(85, 128, 0),rgb(162, 0, 255))
+       
+                
         }
         .inp1 {
             height: 5vh;
             width: 20vw;
+            margin-left: 35%;
+           
         }
         .btn1 {
             display: block;
             background-color: chartreuse;
+            margin-left: 42%;
         }
         .parent {
-            height: 40vh;
+            height: 50vh;
             width: 30vw;
             border: 2px solid red;
             margin-top: 20px;
+            margin-left: 30%;
+            background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
         }
-        .img1 {
+        .img1{
             height: 20vh;
             width: 30vw;
         }
-    </style>
-</head>
+</style>
 <body>
     <script>
-        var inp1 = document.createElement("input");
+          var inp1 = document.createElement("input");
         document.body.appendChild(inp1);
         inp1.setAttribute("class", "inp1");
 
@@ -45,48 +57,63 @@
         a2.setAttribute("class", "parent");
         document.body.appendChild(a2);
 
-        // Add event listener for the button
-        submit.addEventListener("click", () => {
-            var countryName = inp1.value;
+        submit.addEventListener("click",()=>{
+           var countryname=inp1.value
 
-            async function country() {
-           
-                var res = await fetch(`https://restcountries.com/v3.1name/${countryName}?fullText=true`);
-                var data = await res.json();
-                console.log(data);
-                
-           
+           if(countryname){
+          async function country(){
+       
+            var res=await fetch(`https://restcountries.com/v3.1/name/${countryname}?fullText=true`)
+            var data=await res.json()
+            console.log(data)
 
-                // Clear the content of the existing card before adding new content
-            //     a2.innerHTML = ""; 
 
-            //     // Map through the data and create elements for the card
-            //   data.map(function (val) {
-            //         console.log(val.currencies)
-            //         // Create and append the country flag
-            //         var img1 = document.createElement("img");
-            //         img1.src = val.flags.svg;
-            //         img1.setAttribute("class", "img1");
-            //         a2.appendChild(img1);
+            a2.innerHTML=""
+            data.map(function(val){
+             console.log(val)
+            //   Create and append the country flag
+                    var img1 = document.createElement("img");
+                    img1.src = val.flags.svg;
+                    img1.setAttribute("class", "img1");
+                    a2.appendChild(img1);
 
-            //         // Create and append the country capital
-            //         var p1 = document.createElement("h1");
-            //         p1.innerHTML = "Capital: " + val.capital;
-            //         a2.appendChild(p1);
+                    // Create and append the country capital
+                    var p1 = document.createElement("h1");
+                    p1.innerHTML = "Capital: " + val.capital;
+                    a2.appendChild(p1);
 
-            //         // Create and append the country population
-            //         var p2 = document.createElement("p");
-            //         p2.innerHTML = "Population: " + val.population;
-            //         a2.appendChild(p2);
+                    // Create and append the country population
+                    var p2 = document.createElement("p");
+                    p2.innerHTML = "Population: " + val.population;
+                    a2.appendChild(p2);
 
-            //         // Create and append the country region
-            //         var p3 = document.createElement("p");
-            //         p3.innerHTML = "Region: " + val.region;
-            //         a2.appendChild(p3);
-                // });
-            }
-            country();
-        });
+                    // Create and append the country region
+                    var p3 = document.createElement("p");
+                    p3.innerHTML = "Region: " + val.region;
+                    a2.appendChild(p3);
+
+
+
+
+
+
+            })
+
+   
+
+
+          }
+          country()
+          
+             
+        }
+        else{
+            a2.innerHTML=""
+            alert("input field should not be empty")
+        }
+        })
+    
+      
     </script>
 </body>
 </html>
