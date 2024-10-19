@@ -3,63 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<style>
-    body{
-        background-color: cadetblue;
-   
-    }
-    .inp1{
-        height: 5vh;
-        width: 20vw;
-    }
-    .btn1{
-        display: block;
-        background-color: chartreuse;
-
-    }
-</style>
+    <title>Country Info</title>
+    <style>
+        body {
+            background-color: cadetblue;
+        }
+        .inp1 {
+            height: 5vh;
+            width: 20vw;
+        }
+        .btn1 {
+            display: block;
+            background-color: chartreuse;
+        }
+        .parent {
+            height: 40vh;
+            width: 30vw;
+            border: 2px solid red;
+            margin-top: 20px;
+        }
+        .img1 {
+            height: 20vh;
+            width: 30vw;
+        }
+    </style>
 </head>
 <body>
-   
     <script>
-        var inp1=document.createElement("input")
-        document.body.appendChild(inp1)
-        inp1.setAttribute("class","inp1")
-        /////////////
-        var submit=document.createElement("button")
-        submit.innerHTML="SUBMIT"
-        document.body.appendChild(submit)
-        submit.setAttribute("class","btn1")
-        //////////////////
-        submit.addEventListener("click",()=>{
-            var countryName=inp1.value
+        var inp1 = document.createElement("input");
+        document.body.appendChild(inp1);
+        inp1.setAttribute("class", "inp1");
 
-    async function country(){
-    var res=await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
-      
-      var data=await res.json()
-      console.log(data)
-        }
-        country()
+        // Button creation
+        var submit = document.createElement("button");
+        submit.innerHTML = "SEARCH";
+        document.body.appendChild(submit);
+        submit.setAttribute("class", "btn1");
 
-        var a1=data.map(function (val){
-            return a1
-        })
-        console.log(a1)
-    })
+        // Create a parent card div outside the event listener
+        var a2 = document.createElement("div");
+        a2.setAttribute("class", "parent");
+        document.body.appendChild(a2);
 
-    
-    
+        // Add event listener for the button
+        submit.addEventListener("click", () => {
+            var countryName = inp1.value;
 
+            async function country() {
+           
+                var res = await fetch(`https://restcountries.com/v3.1name/${countryName}?fullText=true`);
+                var data = await res.json();
+                console.log(data);
+                
+           
 
-  
+                // Clear the content of the existing card before adding new content
+            //     a2.innerHTML = ""; 
 
+            //     // Map through the data and create elements for the card
+            //   data.map(function (val) {
+            //         console.log(val.currencies)
+            //         // Create and append the country flag
+            //         var img1 = document.createElement("img");
+            //         img1.src = val.flags.svg;
+            //         img1.setAttribute("class", "img1");
+            //         a2.appendChild(img1);
 
+            //         // Create and append the country capital
+            //         var p1 = document.createElement("h1");
+            //         p1.innerHTML = "Capital: " + val.capital;
+            //         a2.appendChild(p1);
 
-        
+            //         // Create and append the country population
+            //         var p2 = document.createElement("p");
+            //         p2.innerHTML = "Population: " + val.population;
+            //         a2.appendChild(p2);
 
-
+            //         // Create and append the country region
+            //         var p3 = document.createElement("p");
+            //         p3.innerHTML = "Region: " + val.region;
+            //         a2.appendChild(p3);
+                // });
+            }
+            country();
+        });
     </script>
 </body>
 </html>

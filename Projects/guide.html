@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+           height: 60vh;
+           width: 40vw;
+           margin-top: 5%;
+           border: 2px solid blue;
+        }
+        .img1{
+            height: 20vh;
+            width: 30vw;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Country guide</h1>
+    <script>
+        //creating the input field
+        var inp=document.createElement("input")
+        document.body.appendChild(inp)
+
+        //creating the submit button
+        var submit=document.createElement("button")
+        submit.innerHTML="search"
+        document.body.appendChild(submit)
+
+        var card=document.createElement("div")
+        card.setAttribute("class","parent")
+        document.body.appendChild(card)
+
+        submit.addEventListener("click",()=>{
+            var search=inp.value
+            async function country(){
+                var a1=await fetch(`https://restcountries.com/v3.1/name/${search}?fullText=true`)
+                var res=await a1.json()
+                console.log(res)
+                  card.innerHTML=""
+
+               
+
+                res.map(function(val){
+                //  console.log(val.capital)
+                //  console.log(val.flags.png)
+                //  console.log(val.timezones)
+                 console.log(val.currencies.INR)
+
+
+
+
+
+                 var h1=document.createElement("h1")
+                 h1.innerHTML="capital"+val.capital
+                 card.appendChild(h1)
+
+                 var img1=document.createElement("img")
+                 img1.setAttribute("class","img1")
+                 img1.src=val.flags.png
+                 card.appendChild(img1)
+
+                 
+                 var h2=document.createElement("h1")
+                 h2.innerHTML="timezone:"+val.timezones
+                 card.appendChild(h2)
+
+                 var h3=document.createElement("h1")
+                 h3.innerHTML="currency:"+val.currencies.INR.name
+                 card.appendChild(h3)
+
+
+
+
+
+
+
+
+
+                })
+            }
+            country()
+        })
+  
+
+
+
+    </script>
+</body>
+</html>

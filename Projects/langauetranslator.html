@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Language Translator</h1>
+
+    <label for="text">Text to Translate:</label>
+    <textarea id="text" rows="4"></textarea>
+
+    <label for="fromLanguage">From:</label>
+    <select id="fromLanguage">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <!-- Add more language options as needed -->
+    </select>
+
+    <label for="toLanguage">To:</label>
+    <select id="toLanguage">
+        <option value="es">Spanish</option>
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <!-- Add more language options as needed -->
+    </select>
+
+    <button onclick="translateText()">Translate</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        const apiKey = 'YOUR_GOOGLE_CLOUD_API_KEY'; // Replace with your API Key
+
+        async function translateText() {
+            const text = document.getElementById("text").value;
+            const fromLanguage = document.getElementById("fromLanguage").value;
+            const toLanguage = document.getElementById("toLanguage").value;
+
+            if (!text) {
+                alert("Please enter text to translate.");
+                return;
+            }
+
+            const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+
+            const requestBody = {
+                q: text,
+                source: fromLanguage,
+                target: toLanguage,
+                format: "text"
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(requestBody)
+                });
+
+                const result = await response.json();
+                document.getElementById("result").innerHTML = result.data.translations[0].translatedText;
+            } catch (error) {
+                console.error("Error translating text:", error);
+                document.getElementById("result").innerHTML = "Error occurred while translating.";
+            }
+        }
+    </script>
+
+</body>
+</html>

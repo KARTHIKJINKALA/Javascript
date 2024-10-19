@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: grid;
+        grid-template-columns: 230px 230px 230px 230px;
+        row-gap: 5%;
+       
+    }
+    .card1{
+        height: 50vh;
+        border: 2px solid;
+        width: 20vw;
+    }
+</style>
+<body>
+    <script>
+        async function hello(){
+            var a1=await fetch("https://fakestoreapi.com/products/")
+            var a2=await a1.json()
+            console.log((a2))
+
+            var res=a2.map(function(val){
+                // console.log(val.id)
+                // console.log(val.title)
+                // console.log(val.category)
+                // console.log(val.price)
+                // console.log(val.image)
+
+                var card=document.createElement("div")
+            card.setAttribute("class","card")
+            document.body.appendChild(card)
+
+            var card1=document.createElement("div")
+            card1.setAttribute("class","card1")
+            card.appendChild(card1)
+
+            //////
+            
+            var p1=document.createElement("p")
+            p1.innerHTML="id:"+val.id
+            card1.appendChild(p1)
+
+            var p2=document.createElement("p")
+            p2.innerHTML="title:"+val.title
+            card1.appendChild(p2)
+            
+            var p3=document.createElement("p")
+            p3.innerHTML="category:"+val.category
+            card1.appendChild(p3)
+
+            
+            var p4=document.createElement("p")
+            p4.innerHTML="price:"+val.price
+            card1.appendChild(p4)
+
+            var img1=document.createElement("img")
+            img1.src=val.image
+            img1.style.height="10vh"
+            card1.appendChild(img1)
+
+
+            })
+        }
+        hello()
+    </script>
+</body>
+</html>
