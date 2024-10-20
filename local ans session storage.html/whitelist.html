@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                .flex{
+            margin-top: 2%;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            row-gap: 2%;
+        }
+        .card{
+            height: 44vh;
+            width: 25vw;
+            border: 2px solid blueviolet;
+            text-align: center;
+
+            background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 orange;
+backdrop-filter: blur( 8.5px );
+-webkit-backdrop-filter: blur( 8.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+        .img1{
+            height: 15vh;
+            width: 10vw;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center;background-color: rgb(135, 222, 216);color: darkcyan;">Welcome to your whitelist</h1>
+</body>
+<script>
+ var output= localStorage.getItem('items');
+var disp=JSON.parse(output)
+console.log(disp)
+
+var mainparent=document.createElement("div")
+        mainparent.setAttribute("class","flex")
+        document.body.appendChild(mainparent)
+        console.log(mainparent)
+
+disp.map(function(val){
+      console.log(val)
+
+
+      var parent=document.createElement("div")
+        parent.setAttribute("class","card")
+        // document.body.appendChild(parent)
+        mainparent.appendChild(parent)
+
+        var p1=document.createElement("p")
+        p1.innerHTML="Category:"+val.category
+        parent.appendChild(p1)
+
+        var img1=document.createElement("img")
+       img1.src=val.image
+       img1.setAttribute("class","img1")
+        parent.appendChild(img1)
+
+        var p2=document.createElement("p")
+        p2.innerHTML="Price:"+val.price
+        parent.appendChild(p2)
+
+      
+})
+
+
+
+</script>
+</html>
