@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Reminder</title>
+  <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f4f8;
+        font-family: Arial, sans-serif;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    .body-container {
+        position: relative;
+        width: 200px;
+        height: 400px;
+        margin: auto;
+        overflow: hidden;
+    }
+    
+    .body-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    .water-fill {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 128, 255, 0.6);
+        transition: height 0.3s ease-in-out;
+        z-index: 0;
+    }
+    
+    .controls {
+        margin-top: 20px;
+    }
+    
+    #waterInput {
+        width: 60%;
+        padding: 10px;
+        margin: 5px;
+    }
+    .body-container {
+        position: relative;
+        width: 200px;
+        height: 400px;
+        margin: auto;
+        overflow: hidden;
+    }
+    
+    .body-image {
+        display: none; /* Hide the actual image, use it only for masking */
+    }
+    
+    .water-fill {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0; /* Initial height is 0 */
+        background-color: rgba(0, 128, 255, 0.6);
+        transition: height 0.3s ease-in-out;
+        mask-image: url('img1.jpg'); /* Use the silhouette as a mask */
+        mask-size: cover; /* Fit the mask to the container */
+        mask-position: center;
+        z-index: 1;
+    }
+    
+    
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="body-container">
+            <div class="water-fill" id="waterFill"></div>
+            <img src="img1.jpg" alt="Human Body" class="body-image">
+        </div>
+        <div class="controls">
+            <input type="number" id="waterInput" placeholder="Enter water consumed (ml)">
+            <button onclick="updateWaterLevel()">Add Water</button>
+            <p>Water Consumption: <span id="percentage">0%</span></p>
+        </div>
+    </div>
+    <script>
+        let totalWaterConsumed = 0;
+const dailyGoal = 2000; // 2000 ml is the daily goal
+
+function updateWaterLevel() {
+    const waterInput = document.getElementById("waterInput").value;
+    const waterFill = document.getElementById("waterFill");
+    const percentageDisplay = document.getElementById("percentage");
+
+    if (waterInput === "") {
+        alert("Please enter the amount of water consumed.");
+        return;
+    }
+
+    totalWaterConsumed += parseInt(waterInput, 10);
+
+    // Calculate the percentage of the daily goal
+    const percentage = Math.min((totalWaterConsumed / dailyGoal) * 100, 100);
+
+    // Update the water fill height based on percentage
+    waterFill.style.height = percentage + "%";
+
+    // Update the display percentage
+    percentageDisplay.textContent = Math.round(percentage) + "%";
+
+    // Clear the input field
+    document.getElementById("waterInput").value = "";
+}
+
+    </script>
+</body>
+</html>
