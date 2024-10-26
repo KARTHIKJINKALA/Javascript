@@ -17,13 +17,23 @@
             justify-content: center;
             padding: 20px;
         }
+        .btn{
+
+            margin-left:46%;
+            margin-top:2%;
+        }
 
         @media screen and (max-width: 576px) {
             .add {
                 width: 80vw;
-                margin-left: 10%;
+                margin-left: 2%;
                 font-size: 4vh;
             }
+            .btn{
+
+margin-left:35%;
+margin-top:2%;
+}
         }
     </style>
 </head>
@@ -52,8 +62,7 @@
         quoteContainer.setAttribute("class", "add");
 
         var btn=document.querySelector("button");
-        btn.style.marginLeft="45%";
-        btn.style.marginTop="2%";
+        btn.setAttribute("class","btn")
 
         btn.addEventListener("click", function () {
 
