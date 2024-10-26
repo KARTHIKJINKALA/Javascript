@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add{
+            height: 40vh;
+            width: 40vw;
+            margin-left: 30%;
+            border: 2px solid red;
+            /* background-color: chartreuse; */
+            display: flex;
+            align-items: center;
+            font-size: 6vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="new">
+
+    </div>
+    <button>Genrate Quote</button>
+    <script>
+        var colors=[" #e6f2ff"];
+        var tcolor=["pink","blue","olive","green","orange","brown","black","purple","navy","red"]
+
+var quote=[  "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+  "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
+  "Life is what happens when you're busy making other plans. - John Lennon",
+  "Do not go where the path may lead, go instead where there is no path and leave a trail. - Ralph Waldo Emerson",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+  "In the middle of every difficulty lies opportunity. - Albert Einstein",
+  "It does not matter how slowly you go as long as you do not stop. - Confucius",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "The best time to plant a tree was 20 years ago. The second best time is now. - Chinese Proverb",
+  "Happiness is not something ready made. It comes from your own actions. - Dalai Lama"];
+
+        var a=document.getElementsByClassName("new")[0];
+        a.setAttribute("class","add");
+        console.log(a);
+
+        var btn=document.querySelector("button");
+        btn.style.marginLeft="45%";
+        btn.style.marginTop="2%"
+
+        btn.addEventListener("click",function(){
+    
+
+        
+            var rand=colors[Math.ceil(Math.random()*0)];
+            var rand1=quote[Math.ceil(Math.random()*9)];
+            var trand=tcolor[[Math.ceil(Math.random()*9)]]
+         a.style.backgroundColor=rand;
+         a.style.color=trand;
+         console.log(rand);
+         a.innerHTML=[rand1];
+         console.log(rand1);
+         console.log(trand);
+        
+        })
+        
+
+        
+
+
+    </script>
+</body>
+</html>
