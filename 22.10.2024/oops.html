@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class dog{
+           #name;
+          #color;
+            type;
+
+           constructor (name,color,type){
+            this.#name=name
+            this.#color=color
+            this.type=type
+           }
+           
+           work(){
+            console.log(this.#name +" "+"will guard the our house night time")
+           }
+           get color(){
+            return this.#color
+           }
+           
+        }
+
+        var obj=new dog("chintu","black","lab")
+        var obj1=new dog("rockey","brown","huskey")
+
+        dog.prototype.weight="55kg"
+
+        console.log(obj.weight)
+        console.log(obj1.weight)
+        obj.work()
+        obj1.work()
+    //    console.log(obj.color)
+
+
+    </script>
+</body>
+</html>

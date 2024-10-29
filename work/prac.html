@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList Example</title>
+    <style>
+        .box { padding: 20px; }
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .yellow { background-color: yellow; }
+        .pink{ background-color:pink; }
+
+    </style>
+</head>
+<body>
+    <div id="myElement" class="red">Hello, World!</div>
+
+    <script>
+        const element = document.getElementById("myElement");
+
+        element.classList.add("blue");
+        console.log(element); // "box red blue"
+
+        // element.classList.remove("red");
+        // console.log(element); // "box blue"
+
+        // element.classList.toggle("blue");
+        // console.log(element); // "box"
+
+        // element.classList.toggle("yellow");
+        // console.log(element); // "box yellow"
+
+        // console.log(element.classList.contains("yellow")); // true
+
+        element.classList.replace("blue", "pink");
+        console.log(element); // "box red"
+    </script>
+</body>
+</html>

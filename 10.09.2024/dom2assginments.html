@@ -25,46 +25,48 @@
     <!-- 2) Event handling: Write a script that adds a click event listener to a button that changes the text of a paragraph when clicked. -->
     <!-- 3) Dynamic class manipulation: Write a function that adds or removes a class from an element when a button is clicked. -->
     
-    <!-- <img src="bimage.jpg" alt="hello world"> -->
+    <img src="bimage.jpg" alt="hello world">
     <script>
 ////////////////////////////
         // 1
-        // var image=document.getElementsByTagName("img")[0];
-        // image.setAttribute("src",'rimage.jpg');
-        // image.setAttribute("alt","house image");
-        // image.style.height="40vh";
-        // console.log(image);
+        var image=document.getElementsByTagName("img")[0];
+        image.setAttribute("src",'rimage.jpg');
+        image.setAttribute("alt","house image");
+        image.style.height="80vh";
+        
+
+        console.log(image);
 // ////////////////////////
 // 2
-    // var btn=document.querySelector("button");
-    // btn.addEventListener("click",()=>{
-        // var element1=document.getElementsByTagName("div")[0];
-    //     element1.innerText="hello coders world";
-    //     element1.style.fontSize="5vh";
-    //     element1.style.color="red";
-    //     // console.log(element1);
+    var btn=document.querySelector("button");
+    btn.addEventListener("click",()=>{
+        var element1=document.getElementsByTagName("div")[0];
+        element1.innerText="hello coders world";
+        element1.style.fontSize="5vh";
+        element1.style.color="red";
+        // console.log(element1);
 
-    // })
+    })
 /////////////////////////
-    // var btn1=document.querySelector("button");
-    // btn1.addEventListener("click",()=>{
-    //     var element2=document.getElementsByTagName("div")[0];
-    //     element2.classList.toggle("add");
-    //     console.log(element2)
-    // })
+    var btn1=document.querySelector("button");
+    btn1.addEventListener("click",()=>{
+        var element2=document.getElementsByTagName("div")[0];
+        element2.classList.toggle("add");
+        console.log(element2)
+    })
 
-    // console.log(btn);
+    console.log(btn);
 
 //////////////////////
 
-    // var btn2=document.querySelector("button");
-    // btn2.addEventListener("click",()=>{
-    //     var element3=document.getElementsByTagName("div")[0];
-    //     element3.classList.toggle("add");
-    //     console.log(element3)
-    // })
+    var btn2=document.querySelector("button");
+    btn2.addEventListener("click",()=>{
+        var element3=document.getElementsByTagName("div")[0];
+        element3.classList.toggle("remove");
+        console.log(element3)
+    })
 
-    // console.log(btn);
+    console.log(btn);
     </script>
 
 

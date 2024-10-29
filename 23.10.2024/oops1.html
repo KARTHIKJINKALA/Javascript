@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class school{
+            classes;
+            students;
+            teachers;
+            sports;
+            constructor(classes,students,teachers,sports){
+                this.classes=classes
+                this.students=students
+                this.teachers=teachers
+                this.sports=sports
+            }
+            // work(){
+            //     console.log("running the school")
+            // }
+        }
+
+        class education extends school {
+            syllabus;
+            academics;
+            fairs;
+
+            constructor(classes,students,teachers,sports,syllabus,academics,fairs){
+                super(classes,students,teachers,sports)
+                this.syllabus=syllabus
+                this.academics=academics
+                this.fairs=fairs
+            }
+            work(){
+                console.log("Maintaining the school")
+            }
+        }
+
+        var obj= new education("upto 10th class","150 members","20 teachers","volleyball","6-subjects","1year","science fairs")
+
+        var obj1=new school("upto 10th class","150 members","20 teachers","volleyball")
+        console.log(obj)
+        console.log(obj1)
+        obj.work()
+
+        
+    </script>
+</body>
+</html>

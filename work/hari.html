@@ -5,132 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    .parent{
-        margin-top: 5%;
-        display: grid;
-        justify-content:center;
-        column-gap: 10%;
-        row-gap: 0.5%;
-        grid-template-columns: auto auto auto;
-    }
-    .image1{
-        height:40vh;
-        width: 20vw;
-        background: rgba( 255, 255, 255, 0.3 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 8px );
--webkit-backdrop-filter: blur( 8px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-    }
-    .card{
-        height: 70vh;
-        width: 25vw;
-        border: 2px solid blue;
-        display: flex;
-        justify-content: center;
-
-
-        background: rgba( 255, 255, 255, 0.3 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 8px );
-        -webkit-backdrop-filter: blur( 8px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-    }
-
-    .items{
-        height: 5vh;
-border: 2px solid red;
-width: 100%;
-position: fixed;
-bottom:0px ;
-z-index: 1;
-display: flex;
-justify-content: center;
-
-background: rgba( 255, 255, 255, 0.3 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 8px );
-        -webkit-backdrop-filter: blur( 8px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-
-}
-
-</style>
 <body>
-
-    <div class="items">
-        <button>whistlist</button>
-
-        <button>add to cart</button>
-
-    </div>
-   
     <script>
-      async function hm() {
-    const api = await fetch('https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list?country=us&lang=en&currentpage=0&pagesize=30&categories=men_all&concepts=H%26M%20MAN', {
-        method: "GET",
-        headers: {
-            		'x-rapidapi-key': '56b8291e04msha0e7be193013e99p14dd4cjsnda203864bda7',
-		'x-rapidapi-host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
-
+        async function call(){
+        var a1=await fetch("https://run.mocky.io/v3/8293a22b-b837-49ae-b6db-4563213cbc53")
+        var b1=await a1.json()
+        console.log(b1)
         }
-    });
-
-    var parent=document.createElement("div")
-    parent.setAttribute("class","parent")
-    document.body.appendChild(parent)
-
-    // var items=document.createElement("div")
-    // // parent.setAttribute("class","parent")
-    // document.body.appendChild(items)
-
-    // var btn1=document.createElement("button" )
-    // btn1.setAttribute("class","btn1")
-    // btn1.innerHTML="whislist"
-    // items.appendChild(btn1)
-
-    // var btn2=document.createElement("button" )
-    // btn2.setAttribute("class","btn2")
-    // btn2.innerHTML="whislist"
-    // items.appendChild(btn2)
-
-  
-    const data = await api.json();
-    console.log(data)
-    data.results.forEach(product => {
-    if(product.galleryImages && product.galleryImages.length>0){
-        console.log("Images for product:", product.name);
-        product.galleryImages.forEach(img =>{
-
-            var card=document.createElement("div")
-            card.setAttribute("class","card")
-            parent.appendChild(card)
- 
-
-
-            const imageElement = document.createElement("img");
-            imageElement.setAttribute("class","image1")
-            imageElement.src = img.url;
-            imageElement.alt = product.name;
-            imageElement.style.width = "200px"
-            card.appendChild(imageElement)
-           
-        });
-    }else{
-        console.log("no images found for product:, product.name");
-        
-    }
-        
-    });
-}
-
-hm();
-  
-
+        call()
     </script>
 </body>
 </html>
