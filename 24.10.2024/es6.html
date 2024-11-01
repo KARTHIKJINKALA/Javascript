@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Rest Operator
+
+
+//         function hi(a,b,c,d){
+//              console.log(a,b,c,d)
+//         }
+//         hi(1,2,3,4)
+
+// // we can pass the many argument at a time and dont need to 
+// // take the that much of parameters by using the rest operator in the parameter we can get the all arguments
+ 
+
+// function hello(...a){
+//     console.log(a)
+// }
+// hello(1,44,5,5,66)
+// // by default the rest operator returns the array
+// // the rest operator sholud be always at the end in the function parameters
+
+
+// function a1(a,...b){
+//     console.log(a,b)
+// }
+// // a1(2,4,5,6,7)
+
+
+// // Shallow copy
+// // deep copy
+// var arr=[1,4,5,6]
+// var arr1=arr
+// arr1[0]="karthik jinkala"
+// console.log(arr)
+// console.log(arr1)
+// // in shallow copy the references will be copied 
+// // for this problem of shallow copy we are using the spread operator
+
+
+// // spread operator
+
+// var arr=[1,4,5,6]
+// var arr1=[...arr]
+// arr1[0]="karthik jinkala"
+// console.log(arr)
+// console.log(arr1)
+// // in this the arr clone is stored in arr1 as a new array
+
+
+// Destructuring 
+
+var arr=[1,4,4,5]
+var [first,second,...third]=arr
+console.log(first,...third)
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

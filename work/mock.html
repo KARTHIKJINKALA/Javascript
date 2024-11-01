@@ -17,16 +17,124 @@
 // 1.forEach()
 // 2.map()
 // 3.sort()
-var arr=[1,2,3,4,5,6,688]
+// var arr=[1,2,3,4,5,6,688]
 // arr.forEach(function(val){
 //     //   console.log(val)
 // })
 
 // Map method
-var arr1=arr.map((arr)=>{
-   return arr*2
+// var arr1=arr.map((arr)=>{
+//    return arr*2
+// })
+// console.log(arr1)
+
+
+// function f1(a){
+//     console.log("html")
+//     a()
+
+// }
+// function f2(){
+//     console.log("css")
+  
+// }
+// function f3(){
+//     console.log("js")
+// }
+
+
+// f1(()=>{
+//     f2()
+// })
+
+// creating a promise
+// var promise=new Promise(function(resolve,reject){
+//     var a=200
+//     if(a==20){
+//         resolve("a value is 200")
+//     }
+//     else{
+//         reject("a value is not 200")
+//     }
+// })
+// // consuming the promise
+
+// promise.then((val)=>{
+//  console.log(val)
+// }).catch((err)=>{
+//  console.log(err)
+// })
+
+
+
+// Synchronous flow of code
+// console.log("start")
+// console.log("middle")
+// console.log("end")
+
+
+
+// Asynchronous flow of code
+// console.log("start")
+
+// setTimeout(()=>{
+//     console.log("middle")
+// },5000)
+// console.log("end")
+
+// console.log("task 1 start")
+
+// var promise=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//       resolve("promise is resolved after the 5 seconds")
+//     },3000)
+// })
+// promise.then((val)=>console.log(val))
+// .catch((err)=> console.log(err))
+// function task1() {
+//     return new Promise((res, rej) => {
+//         console.log("task is pending");
+//         res("task is completed");
+//     });
+// }
+
+// function task2(message) {
+//     return new Promise((res, rej) => {
+//         console.log("task2 is pending");
+//         res( "task2 is completed");
+//     });
+// }
+
+// task1()
+//     .then((mes) => task2(mes))
+//     .then((finalMessage) => console.log(finalMessage))
+//     .catch((err) => console.error(err));
+
+var pro1=new Promise((resolve,reject)=>{
+  resolve("html")
 })
-console.log(arr1)
+var pro2=new Promise((resolve,reject)=>{
+  resolve("css")
+})
+var pro3=new Promise((resolve,reject)=>{
+  resolve("javascript")
+})
+var pro4=new Promise((resolve,reject)=>{
+  resolve("React")
+})
+
+pro1.then(val=>console.log(val))
+pro2.then(val=>console.log(val))
+pro3.then(val=>console.log(val))
+pro4.then(val=>console.log(val))
+.catch(err=>console.log(err))
+
+
+
+
+
+
+
     </script>
     
 </body>
