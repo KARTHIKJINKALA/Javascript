@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+  <!-- <div id="parent">
+        <button id="child">
+            click me
+        </button>
+    </div> -->
+
+    
     <script>
 //         let date = new Date();
 // let a1=date.toDateString()
@@ -80,6 +87,7 @@
 // setTimeout(()=>{
 //     console.log("middle")
 // },5000)
+
 // console.log("end")
 
 // console.log("task 1 start")
@@ -110,31 +118,134 @@
 //     .then((finalMessage) => console.log(finalMessage))
 //     .catch((err) => console.error(err));
 
-var pro1=new Promise((resolve,reject)=>{
-  resolve("html")
-})
-var pro2=new Promise((resolve,reject)=>{
-  resolve("css")
-})
-var pro3=new Promise((resolve,reject)=>{
-  resolve("javascript")
-})
-var pro4=new Promise((resolve,reject)=>{
-  resolve("React")
-})
+// var pro1=new Promise((resolve,reject)=>{
+//   resolve("html")
+// })
+// var pro2=new Promise((resolve,reject)=>{
+//   resolve("css")
+// })
+// var pro3=new Promise((resolve,reject)=>{
+//   resolve("javascript")
+// })
+// var pro4=new Promise((resolve,reject)=>{
+//   resolve("React")
+// })
 
-pro1.then(val=>console.log(val))
-pro2.then(val=>console.log(val))
-pro3.then(val=>console.log(val))
-pro4.then(val=>console.log(val))
-.catch(err=>console.log(err))
-
-
+// pro1.then(val=>console.log(val))
+// pro2.then(val=>console.log(val))
+// pro3.then(val=>console.log(val))
+// pro4.then(val=>console.log(val))
+// .catch(err=>console.log(err))
 
 
 
 
 
+    // let parent=document.getElementById("parent");
+    // let child=document.getElementById("child");
+
+    // child.addEventListener("click", function(event){
+    //     console.log("child is clicked");
+    // })
+
+    // parent.addEventListener("click", function(){
+    //     console.log("parent is clicked")
+    // },true)
+    // let parent=document.getElementById("parent");
+    // let child=document.getElementById("child");
+
+    // child.addEventListener("click", function(event){
+    //     event.stopPropagation()// this will prevent the bubbling to the parent
+    //     console.log("child is clicked");
+    // })
+
+    // parent.addEventListener("click", function(){
+    //     console.log("parent is clicked")
+    // })
+    
+// callback hell
+
+// function a1(a){
+//   console.log("1")
+//   a()
+// }
+// function a2(b){
+//   console.log("2")
+//   b()
+// }
+// function a3(c){
+//   console.log("3")
+//   c()
+// }
+// function a4(d){
+//   console.log("4")
+//   d()
+// }
+
+// function a5(){
+//   console.log("5")
+// }
+
+
+// a1(()=>{
+//   a2(()=>{
+//     a3(()=>{
+//       a4(()=>{
+//         a5()
+//       })
+//     })
+//   })
+// })
+let add = (val) =>
+        new Promise((resolve, reject) => {
+          resolve(val + 10);
+        });
+
+      let sub = (val) =>
+        new Promise((resolve, reject) => {
+          resolve(val - 10);
+        });
+
+      let mul = (val) =>
+        new Promise((resolve, reject) => {
+          resolve(val * 5);
+        });
+        
+      let div = (val) =>
+        new Promise((resolve, reject) => {
+          resolve(val / 2);
+        });
+
+      add(10)
+        .then((addres) => sub(addres))
+        .then((subres) => mul(subres))
+        .then((mulres) => div(mulres))
+        .then((divres) => console.log(divres))
+        .catch((error) => console.error(error));
+
+
+        
+
+
+
+// function task1() {
+//     return new Promise((res, rej) => {
+//         console.log("task is pending");
+//         res("task is completed");
+//     });
+// }
+
+// function task2(message) {
+//     return new Promise((res, rej) => {
+//         console.log("task2 is pending");
+//         res("task two is completed");
+//     });
+// }
+
+// task1()
+//     .then((mes) => task2(mes))
+//     .then((finalMessage) => console.log(finalMessage))
+//     .catch((err) => console.error(err));
     </script>
     
 </body>
