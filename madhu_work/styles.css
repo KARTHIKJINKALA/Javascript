@@ -1,0 +1,231 @@
+.back{
+    background-image: url("./WhatsApp\ Image\ 2024-12-26\ at\ 10.56.08_67ace48c.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    
+}
+.elements{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50%;
+    
+    
+
+}
+.restaurant{
+    height: 35vh;
+    border: 2px solid green;
+    width:50vw;
+    background-color: #303030;
+    /* margin-left: 5%; */
+    position: absolute;
+    left: 0.5%;
+    margin-top: 2%;
+ 
+    
+   
+}
+.reshead>h1{
+    /* color: aliceblue; */
+    background-color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid;
+    text-align: center;
+    width: 30vw;
+    margin-left:6%;
+  
+    
+}
+.resdetalis{
+    /* border: 2px solid red; */
+    margin-left: 6%;
+    line-height: 5%;
+    display: flex;
+
+    flex-direction: column;
+
+
+   
+}
+.resdetalis>h1,.resdetalis>h4{
+    color: aliceblue;
+}
+.customize{
+    /* border: 1px solid yellow; */
+    width: 18vw;
+   
+    height: 5vh;
+    text-align: center;
+    /* margin-left: 20%; */
+    background-color: #FF4E00;
+    border-radius: 2%;
+    margin-left: 25%;
+
+}
+.customize>h2{
+  color: aliceblue;
+}
+
+.foot{
+    
+    margin-top: 5%;
+    
+    background-color:yellow;
+    height: 30vh;
+    width: 98vw;
+    display: flex;
+    justify-content: end;
+    column-gap: 1%;
+    background-color: #FF4E00;
+}
+/* .a1{
+
+    margin-left: 20%;
+} */
+.a1,.a2,.a3{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* row-gap: 20%; */
+ 
+    height: 20vh;
+    width: 15vw;
+    border: 1px solid blue;
+    background-color: aliceblue;
+}
+.a4{
+    border: 1px solid blue;
+    background-color: aliceblue;
+    height: 20vh;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+ 
+}
+.a4>h3{
+    text-decoration: underline;
+    background-color: black;
+    color: white;
+}
+.call{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+    /* column-gap: 1%; */
+    width: auto;
+}
+.call>img{
+   height: 3vh;
+   /* border: 2px solid red; */
+}
+/* .a1-1{
+    border-radius: 50%;
+   border: 1px solid blue;
+} */
+.a1-1>img{
+    height: 10vh;
+    width: 6vw;
+    border-radius:40%;
+    background-color: aliceblue;
+    border: 1px solid rgb(0, 255, 89);
+    margin-top: -60%;
+}
+.a3>h2{
+    line-height: 1%;
+}
+
+
+@media screen and (max-width: 576px) {
+    
+  
+
+    .restaurant {
+        width: 100%; 
+        margin-top: 100%; 
+        height: auto; 
+    }
+
+    .reshead > h1 {
+        display: flex;
+        justify-content: center;
+        margin-top: 40%;
+        width: 80%; 
+        font-size: 1.5rem; 
+        text-align: center;
+    }
+
+    .resdetalis {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1rem; 
+        line-height: 1.5;
+    }
+
+    .resdetalis > h1 {
+        font-size: 1.2rem;
+    }
+
+    .resdetalis > h4 {
+        font-size: 1rem;
+    }
+
+    .customize {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        margin: 10px auto;
+        font-size: 1rem; 
+    }
+
+    .foot {
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        height: auto; 
+        gap: 20px;
+        
+    }
+
+    .a1, .a2, .a3, .a4 {
+        width: 90%; 
+        height: auto;
+        padding: 15px;
+        text-align: center;
+        font-size: 1rem; 
+    }
+
+    .a1-1 > img {
+        height: 50px; 
+        width: 50px;
+    }
+
+    .a4 > h3 {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+
+    .call {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+    }
+
+    .call > img {
+        height: 24px; 
+        width: 24px;
+    }
+
+    .call > h4 {
+        font-size: 1rem; 
+    }
+}
