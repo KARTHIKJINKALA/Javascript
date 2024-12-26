@@ -18,7 +18,7 @@
 }
 .restaurant{
     height: 35vh;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     width:50vw;
     background-color: #303030;
     /* margin-left: 5%; */
@@ -96,11 +96,11 @@
  
     height: 20vh;
     width: 15vw;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     background-color: aliceblue;
 }
 .a4{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     background-color: aliceblue;
     height: 20vh;
     width: 15vw;
@@ -137,7 +137,7 @@
     width: 6vw;
     border-radius:40%;
     background-color: aliceblue;
-    border: 1px solid rgb(0, 255, 89);
+    /* border: 1px solid rgb(0, 255, 89); */
     margin-top: -60%;
 }
 .a3>h2{
