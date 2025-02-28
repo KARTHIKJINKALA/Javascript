@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card{
+        height: 100vh;
+        border: 1px solid red;
+        /* background-color: bisque; */
+    }
+    .maincard{
+        height: 10vh;
+        background-color: aqua;
+        border: 1px solid green;
+    }
+</style>
+<body>
+    <script>
+        var body=document.createElement("div")
+        body.classList.add("card")
+
+        var maincard=document.createElement("div")
+        maincard.classList.add("maincard")
+
+        var button=document.createElement("button")
+        button.textContent="Click me"
+
+         function Alert(){
+            alert("Hello World");
+         }
+
+        button.addEventListener("click",Alert)
+
+
+
+
+
+        document.body.appendChild(body)
+        body.appendChild(maincard)
+        maincard.appendChild(button)
+    </script>
+</body>
+</html> -->
+
+counter app using the js
+ 
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+
+    <script>
+        var countervalue=document.createElement("h3")
+        countervalue.textContent= 0
+        document.body.appendChild(countervalue)
+
+
+        var incbutton=document.createElement("button")
+        incbutton.innerHTML="increment"
+
+        incbutton.addEventListener("click",()=>{
+ 
+            var count=parseInt(countervalue.innerHTML)
+            // console.log(count)
+          
+          count+=1
+          console.log(count)
+          countervalue.innerHTML = count;
+        })
+
+         var decbutton=document.createElement("button")
+        decbutton.innerHTML="decrement"
+
+        decbutton.addEventListener("click",()=>{
+            var count=parseInt(countervalue.innerHTML)
+            if(count>0){
+                count-=1
+                countervalue.innerHTML=count
+            }
+             
+            
+        })
+
+        document.body.appendChild(incbutton)
+        document.body.appendChild(decbutton)
+
+    
+
+
+    </script>
+    
+  </body>
+  </html>

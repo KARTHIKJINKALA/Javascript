@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Callbackhell
+
+        // function first(a1){
+        //  console.log("this is first function")   
+        //  a1()
+        // }
+
+        // function second(a2){
+        //  console.log("this is second function")  
+        //  a2() 
+        // }
+        // function third(a3){
+        //  console.log("this is third function")   
+        //  a3()
+        // }
+        // function fourth(a4){
+        //  console.log("this is fourth function")   
+        //  a4()
+        // }
+        // function fifth(){
+        //  console.log("this is fourth function")   
+        // }
+
+        // first(()=>{
+        //     second(()=>{
+        //         third(()=>{
+        //             fourth(()=>{
+        //                 fifth()
+        //             })
+        //         })
+        //     })
+        // })
+//This is forming the pyramid of dom or callback hell 
+// to Mitigate this problem we are moving for the promises and async and await
+
+          // Promises
+// promises in the javascript provide a cleaner and more structure way 
+// to handle asynchronous operations compared to traditional callbacks.
+// It has three states: pending, fulfilled, or rejected.
+
+
+//           creating a promise
+
+// var newPromise=new Promise((resolve,reject)=>{
+//     var a=100
+
+//     if(a>1){
+//         resolve(a+"-is greater than 1")
+//     }
+//     else{
+//         reject(a+"-is  negative number")
+//     }
+// })
+// //consuming the promise-->is for to print the response
+// newPromise.then((val)=>console.log(val))
+// .catch((err)=>console.log(err))
+
+
+
+// if we have the multiple promises then is forms the promise chaining
+// var newPromise1=new Promise((resolve,reject)=>{
+//     var a1=100
+
+//     if(a1>1){
+//         resolve(a1+"-is greater than 1")
+//     }
+//     else{
+//         reject(a1+"-is  negative number")
+//     }
+// })
+
+// var newPromise2=new Promise((resolve,reject)=>{
+//     var a2=20
+
+//     if(a2>1){
+//         resolve(a2+"-is greater than 1")
+//     }
+//     else{
+//         reject(a2+"-is  negative number")
+//     }
+// })
+
+// var newPromise3=new Promise((resolve,reject)=>{
+//     var a3=-100
+
+//     if(a3>1){
+//         resolve(a3+"-is greater than 1")
+//     }
+//     else{
+//         reject(a3+"-is  negative number")
+//     }
+// })
+
+// this is the example of the promis chaining
+// newPromise1.then((resolve)=> console.log(resolve))
+// newPromise2.then((resolve)=> console.log(resolve))
+// newPromise3.then((resolve)=> console.log(resolve))
+// .catch((err)=>console.log(err))
+
+
+let promise1= new Promise((resolve,reject)=>{
+          console.log("promise 1");
+          setTimeout(resolve, 2000, "promise 1 success")
+        })
+
+        let promise2= new Promise((resolve,reject)=>{
+          console.log("promise 2");
+          setTimeout(resolve, 1500, "promise 2 success")
+        })
+
+        let promise3= new Promise((resolve,reject)=>{
+          console.log("promise 3");
+          setTimeout(resolve, 1800, "promise 3 success")
+        })
+
+        let promise4= new Promise((resolve,reject)=>{
+          console.log("promise 4");
+          setTimeout(resolve, 500, "promise 4 success")
+        })
+
+      
+
+        
+        promise1.then((result) => {
+          console.log(result);
+          return promise2;
+        })
+        .then((result) => {
+          console.log(result);
+          return promise3;
+        })
+        .then((result) => {
+          console.log(result);
+          return promise4;
+        })
+        .then((result) => {
+          console.log(result);
+        });
+
+
+
+
+
+
+    </script>
+</body>
+</html>
